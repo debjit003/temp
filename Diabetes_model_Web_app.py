@@ -43,7 +43,7 @@ def diabetes_prediction(input_data):
     #print(prediction)
 
     # Convert input data to DataFrame with feature names
-    input_df = pd.DataFrame(input_data)
+    input_df = pd.DataFrame(input_data, columns=feature_columns)
 
     # Make prediction
     prediction = loaded_model.predict(input_df)
