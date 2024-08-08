@@ -12,7 +12,7 @@ from sklearn.preprocessing import StandardScaler
 import pandas as pd
 
 # Upload file
-data = pd.read_csv("C:/Users/USER/Multiple_disease_prediction/diabetes.csv")
+data = pd.read_csv("diabetes.csv")
 data = data.drop(columns='Outcome', axis=1)
 
 
@@ -22,7 +22,7 @@ standardized_data = scaler.fit_transform(data)
 
 
 #loading the saved model
-loaded_model = pickle.load(open('C:/Users/USER/Multiple_disease_prediction/trained_model_diabetes.sav', 'rb'))
+loaded_model = pickle.load(open('trained_model_diabetes.sav', 'rb'))
 
 # creating a function for prediction
 
