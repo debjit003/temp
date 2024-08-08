@@ -41,7 +41,7 @@ def diabetes_prediction(input_data):
 
     #prediction = loaded_model.predict(std_data)
     #print(prediction)
-
+    feature_columns = [Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin ,BMI ,DiabetesPedigreeFunction ,Age]
     # Convert input data to DataFrame with feature names
     input_df = pd.DataFrame(input_data, columns=feature_columns)
 
