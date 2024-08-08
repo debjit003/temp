@@ -78,7 +78,7 @@ def main():
     
     # creating a button for prediction
     if st.button('Diabetes Test Result'):
-        diagnosis = diabetes_prediction([Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin ,BMI ,DiabetesPedigreeFunction ,Age])
+        diagnosis = diabetes_prediction([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin ,BMI ,DiabetesPedigreeFunction ,Age]])
         
         
     st.success(diagnosis)
