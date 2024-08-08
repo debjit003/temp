@@ -57,12 +57,12 @@ def main():
     #Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age
     
     Pregnancies = st.slider('Number of Pregnancies',0,20)
-    Glucose = st.number_input('Glucose Level',0,300,0.001)
-    BloodPressure = st.number_input('BloodPressure',0,300,0.1)
-    SkinThickness = st.number_input('SkinThickness',0,300,0.1)
-    Insulin = st.number_input('Insulin Level',0,1500,0.1)
+    Glucose = st.number_input('Glucose Level',0.0,300.0,0.001)
+    BloodPressure = st.number_input('BloodPressure',0.0,300.0,0.1)
+    SkinThickness = st.number_input('SkinThickness',0.0,300.0,0.1)
+    Insulin = st.number_input('Insulin Level',0.0,1500.0,0.1)
     BMI = st.slider('BMI value',12.02,94.85)
-    DiabetesPedigreeFunction = st.number_input('value of DiabetesPedigreeFunction',0,30,0.001)
+    DiabetesPedigreeFunction = st.number_input('value of DiabetesPedigreeFunction',0.0,30.0,0.001)
     Age = st.number_input('Age of the Person',0,200,1)
     
     
