@@ -17,8 +17,8 @@ data = data.drop(columns='Outcome', axis=1)
 
 
 # standardizing data 
-scaler = StandardScaler()
-standardized_data = scaler.fit_transform(data)
+#scaler = StandardScaler()
+#standardized_data = scaler.fit_transform(data)
 
 
 #loading the saved model
@@ -36,10 +36,10 @@ def diabetes_prediction(input_data):
     
 
     # standardize the input data
-    std_data = scaler.transform(input_data_reshaped)
-    print(std_data)
+    #std_data = scaler.transform(input_data_reshaped)
+    #print(std_data)
 
-    prediction = loaded_model.predict(std_data)
+    prediction = loaded_model.predict(input_data_reshaped)
     print(prediction)
     
     if (prediction[0] == 0):
