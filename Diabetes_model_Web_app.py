@@ -39,7 +39,7 @@ def diabetes_prediction(input_data):
     std_data = scaler.transform(input_data_reshaped)
     print(std_data)
 
-    prediction = loaded_model.predict(input_data_reshaped)
+    prediction = loaded_model.predict(std_data)
     print(prediction)
     
     if (prediction[0] == 0):
