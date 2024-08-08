@@ -29,26 +29,19 @@ loaded_model = pickle.load(open('trained_model_diabetes.sav', 'rb'))
 def diabetes_prediction(input_data):
 
     # changing the input_data to numpy array
-    #input_data_as_numpy_array = np.asarray(input_data)
+    input_data_as_numpy_array = np.asarray(input_data)
 
     # reshape the array as we are predicting for one instance
-    #input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
+    input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
     
 
     # standardize the input data
     #std_data = scaler.transform(input_data_reshaped)
     #print(std_data)
 
-    #prediction = loaded_model.predict(std_data)
-    #print(prediction)
-    feature_columns = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
-    # Convert input data to DataFrame with feature names
-    input_df = pd.DataFrame(input_data, columns=feature_columns)
-
-    # Make prediction
-    prediction = loaded_model.predict(input_df)
-
-#st.write(f'Prediction: {prediction[0]}')
+    prediction = loaded_model.predict(input_data_reshaped)
+    print(prediction)
+    
     if (prediction[0] == 0):
       return 'The person is not diabetic'
     else:
@@ -78,7 +71,7 @@ def main():
     
     # creating a button for prediction
     if st.button('Diabetes Test Result'):
-        diagnosis = diabetes_prediction([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin ,BMI ,DiabetesPedigreeFunction ,Age]])
+        diagnosis = diabetes_prediction([Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin ,BMI ,DiabetesPedigreeFunction ,Age])
         
         
     st.success(diagnosis)
